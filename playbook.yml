@@ -1,0 +1,27 @@
+---
+- hosts: icinga_master  
+  become: true
+  tasks:
+    - ansible.builtin.include_role:
+        name: geerlingguy.apache
+
+    - ansible.builtin.include_role:
+        name: geerlingguy.mysql
+
+    - ansible.builtin.include_role:
+        name: icinga.icinga.repos
+
+    - ansible.builtin.include_role:
+        name: icinga.icinga.icingadb_redis
+
+    - ansible.builtin.include_role:
+        name: icinga.icinga.icingadb
+    
+    - ansible.builtin.include_role:
+        name: icinga.icinga.icinga2
+
+    # Icinga 2 needs to be finished before installing director
+    - meta: flush_handlers
+
+    - ansible.builtin.include_role:
+        name: icinga.icinga.icingaweb2

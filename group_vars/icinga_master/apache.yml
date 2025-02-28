@@ -1,0 +1,9 @@
+---
+apache_listen_ip: "*"
+apache_listen_port: 80
+apache_remove_default_vhost: true
+apache_create_vhosts: true
+apache_vhosts:
+  - servername: "{{ ansible_fqdn }}"
+    extra_parameters: |
+      RedirectMatch ^/$ /icingaweb2

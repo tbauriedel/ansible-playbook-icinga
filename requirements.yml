@@ -1,0 +1,7 @@
+---
+roles:
+  - geerlingguy.mysql
+  - geerlingguy.apache
+
+collections:
+  - icinga.icinga

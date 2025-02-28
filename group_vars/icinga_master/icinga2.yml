@@ -1,0 +1,34 @@
+---
+icinga2_constants:
+  NodeName: "{{ ansible_fqdn }}"
+  ZoneName: main
+icinga2_confd: false
+icinga2_config_directories:
+  - zones.d/main
+icinga2_features:
+  - name: icingadb
+    host: localhost
+    port: 6380
+    password: redis-pass
+  - name: api
+    ca_host: none
+    endpoints:
+      - name: NodeName
+        host: 127.0.0.1
+    zones:
+      - name: main
+        endpoints:
+          - NodeName
+      - name: director-global
+        global: true
+  - name: checker
+    state: present
+  - name: mainlog
+    state: present
+icinga2_objects:
+  - name: admin
+    type: ApiUser
+    file: "zones.d/main/apiuser.conf"
+    password: admin
+    permissions:
+      - '*'
