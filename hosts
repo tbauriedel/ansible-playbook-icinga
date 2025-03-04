@@ -1,2 +1,2 @@
 [icinga_master]
-icinga-master  ansible_host=10.77.14.212   ansible_user=debian
+icinga-master  ansible_host=10.77.14.107   ansible_user=debian

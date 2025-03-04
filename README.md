@@ -2,6 +2,9 @@
 
 Simple Ansible playbook to install the icinga-stack.  
 The following componentes will be installed:  
+* InfluxDB2
+* Go-carbon
+* Carbonapi
 * MySQL
 * Apache
 * Icinga repos
@@ -11,6 +14,10 @@ The following componentes will be installed:
 * Icinga Web 2
 
 Pre-configured credentials:
+* InfluxDB primary user
+  * Basic auth `admin` - `admin0815!`
+* InfluxDB API admin token
+  * `admin0815!`
 * MySQL root user
   * Basic auth `root` - `root`
 * Icinga 2 API

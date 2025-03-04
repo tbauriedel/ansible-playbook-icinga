@@ -1,7 +1,9 @@
 ---
 roles:
-  - geerlingguy.mysql
-  - geerlingguy.apache
+  - name: geerlingguy.mysql
+  - name: geerlingguy.apache
 
 collections:
-  - icinga.icinga
+  - name: icinga.icinga
+  - name: tbauriedel.gographite
+  - name: tbauriedel.influxdb2

@@ -3,6 +3,18 @@
   become: true
   tasks:
     - ansible.builtin.include_role:
+        name: tbauriedel.influxdb2.repos
+
+    - ansible.builtin.include_role:
+        name: tbauriedel.influxdb2.influxdb2
+
+    - ansible.builtin.include_role:
+        name: tbauriedel.gographite.gocarbon
+
+    - ansible.builtin.include_role:
+        name: tbauriedel.gographite.carbonapi
+
+    - ansible.builtin.include_role:
         name: geerlingguy.apache
 
     - ansible.builtin.include_role:

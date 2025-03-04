@@ -1,0 +1,26 @@
+---
+influxdb_influxdb2_force_pip: true
+influxdb_influxdb2_host: "http://localhost:8086"
+influxdb_influxdb2_primary_user:
+  name: admin
+  password: 'admin0815!'
+influxdb_influxdb2_primary_org: default
+influxdb_influxdb2_primary_bucket: default
+influxdb_influxdb2_retention: 0
+influxdb_influxdb2_admin_token: "admin0815!"
+
+influxdb_influxdb2_orgs:
+  - name: monitoring
+    desc: "Monitoring organization"
+    token: "{{ influxdb_influxdb2_admin_token }}"
+
+influxdb_influxdb2_buckets:
+  - name: icinga2
+    org: monitoring
+    state: present
+    desc: "Icinga 2 perfdata"
+    retention:
+      type: expire
+      everySeconds: 1209600 # 2 weeks
+      shardGroupDurationSeconds: 172800 # 2 days
+    token: "{{ influxdb_influxdb2_admin_token }}"
