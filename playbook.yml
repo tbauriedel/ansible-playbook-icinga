@@ -1,5 +1,5 @@
 ---
-- hosts: icinga_master  
+- hosts: icinga_master
   become: true
   tasks:
     - ansible.builtin.include_role:
@@ -15,6 +15,9 @@
         name: tbauriedel.gographite.carbonapi
 
     - ansible.builtin.include_role:
+        name: grafana.grafana.grafana
+
+    - ansible.builtin.include_role:
         name: geerlingguy.apache
 
     - ansible.builtin.include_role:
@@ -28,7 +31,7 @@
 
     - ansible.builtin.include_role:
         name: icinga.icinga.icingadb
-    
+
     - ansible.builtin.include_role:
         name: icinga.icinga.icinga2
 

@@ -5,6 +5,7 @@ The following componentes will be installed:
 * InfluxDB2
 * Go-carbon
 * Carbonapi
+* Grafana
 * MySQL
 * Apache
 * Icinga repos
@@ -18,6 +19,8 @@ Pre-configured credentials:
   * Basic auth `admin` - `admin0815!`
 * InfluxDB API admin token
   * `admin0815!`
+* Grafana admin user
+  * Basic auth `admin` - `admin`
 * MySQL root user
   * Basic auth `root` - `root`
 * Icinga 2 API

@@ -4,6 +4,11 @@ roles:
   - name: geerlingguy.apache
 
 collections:
+  - name: community.mysql
+  - name: community.general
   - name: icinga.icinga
   - name: tbauriedel.gographite
   - name: tbauriedel.influxdb2
+  - name: grafana.grafana
+    version: 5.7.0
+  - name: community.grafana

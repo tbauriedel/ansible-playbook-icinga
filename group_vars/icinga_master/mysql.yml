@@ -6,7 +6,7 @@ mysql_databases:
   - name: director
   - name: x509
 mysql_users:
-  - name: admin 
+  - name: admin
     host: "localhost"
     password: admin
     priv: "*.*:ALL"
